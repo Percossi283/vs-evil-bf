@@ -9,6 +9,9 @@ import options.OptionsState;
 import backend.Song;
 import backend.WeekData;
 
+import openfl.Lib;
+import lime.graphics.Image;
+
 class MainMenuState extends MusicBeatState
 {
 	public static var psychEngineVersion:String = '0.7.3'; // This is also used for Discord RPC
@@ -39,7 +42,7 @@ class MainMenuState extends MusicBeatState
 
 	var myLittleFinger:FlxSprite;
 
-	var psychVer:FlxText;
+	var evilVer:FlxText;
 	var fnfVer:FlxText;
 
 	var isEvil:Bool = false;
@@ -118,10 +121,10 @@ class MainMenuState extends MusicBeatState
 			menuItem.screenCenter(X);
 		}
 
-		psychVer = new FlxText(12, FlxG.height - 44, 0, "Psych Engine v" + psychEngineVersion, 12);
-		psychVer.scrollFactor.set();
-		psychVer.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
-		add(psychVer);
+		evilVer = new FlxText(12, FlxG.height - 44, 0, "Vs EVIL BF v0.0.1", 12);
+		evilVer.scrollFactor.set();
+		evilVer.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		add(evilVer);
 		fnfVer = new FlxText(12, FlxG.height - 24, 0, "Friday Night Funkin' v" + Application.current.meta.get('version'), 12);
 		fnfVer.scrollFactor.set();
 		fnfVer.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
@@ -242,10 +245,22 @@ class MainMenuState extends MusicBeatState
 	{
 		// evil boyfriend mode
 
-		FlxTimer.wait(1.3, ()->
+		FlxTimer.wait(0.4, ()->
+		{
+			var icon:Image = Image.fromFile(Paths.modsImages('blank'));
+			Lib.application.window.setIcon(icon);
+		});
+
+
+		FlxTimer.wait(0.9, ()->
 		{
 			FlxTween.tween(fnfVer, {alpha: 0}, 0.4, {ease: FlxEase.quadOut});
-			FlxTween.tween(psychVer, {alpha: 0}, 0.4, {ease: FlxEase.quadOut});
+			FlxTween.tween(evilVer, {alpha: 0}, 0.4, {ease: FlxEase.quadOut});
+		});
+
+		FlxTimer.wait(1.3, ()->
+		{
+			Lib.application.window.title = '';
 		});
 
 		FlxTween.tween(FlxG.sound.music, {pitch: 0}, 9, {ease: FlxEase.expoIn});
@@ -262,6 +277,11 @@ class MainMenuState extends MusicBeatState
 					myLittleFinger.animation.play('twiddlefinger');
 
 					isEvil = true;
+
+					#if DISCORD_ALLOWED
+					DiscordClient.HOVER_TEXT = 'WELCOME BACK';
+					DiscordClient.changePresence('Welcome Back.', null);
+					#end
 				});
 			}});
 		});

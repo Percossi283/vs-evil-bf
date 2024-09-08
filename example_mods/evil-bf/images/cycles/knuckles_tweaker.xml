@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="knuckles tweaker.png">
+<SubTexture name="knuckles tweaker idle0000" x="0" y="869" width="478" height="808" frameX="-254" frameY="-113" frameWidth="1980" frameHeight="1080" />
+<SubTexture name="knuckles tweaker idle0001" x="0" y="869" width="478" height="808" frameX="-254" frameY="-113" frameWidth="1980" frameHeight="1080" />
+<SubTexture name="knuckles tweaker idle0002" x="0" y="869" width="478" height="808" frameX="-254" frameY="-113" frameWidth="1980" frameHeight="1080" />
+<SubTexture name="knuckles tweaker idle0003" x="973" y="0" width="483" height="834" frameX="-256" frameY="-106" frameWidth="1980" frameHeight="1080" />
+<SubTexture name="knuckles tweaker idle0004" x="973" y="0" width="483" height="834" frameX="-256" frameY="-106" frameWidth="1980" frameHeight="1080" />
+<SubTexture name="knuckles tweaker idle0005" x="973" y="0" width="483" height="834" frameX="-256" frameY="-106" frameWidth="1980" frameHeight="1080" />
+<SubTexture name="knuckles tweaker idle0006" x="973" y="0" width="483" height="834" frameX="-256" frameY="-106" frameWidth="1980" frameHeight="1080" />
+<SubTexture name="knuckles tweaker idle0007" x="0" y="0" width="487" height="869" frameX="-271" frameY="-98" frameWidth="1980" frameHeight="1080" />
+<SubTexture name="knuckles tweaker idle0008" x="0" y="0" width="487" height="869" frameX="-271" frameY="-98" frameWidth="1980" frameHeight="1080" />
+<SubTexture name="knuckles tweaker idle0009" x="0" y="0" width="487" height="869" frameX="-271" frameY="-98" frameWidth="1980" frameHeight="1080" />
+<SubTexture name="knuckles tweaker idle0010" x="487" y="0" width="486" height="841" frameX="-287" frameY="-108" frameWidth="1980" frameHeight="1080" />
+<SubTexture name="knuckles tweaker idle0011" x="487" y="0" width="486" height="841" frameX="-287" frameY="-108" frameWidth="1980" frameHeight="1080" />
+<SubTexture name="knuckles tweaker idle0012" x="487" y="0" width="486" height="841" frameX="-287" frameY="-108" frameWidth="1980" frameHeight="1080" />
+<SubTexture name="knuckles tweaker idle0013" x="487" y="0" width="486" height="841" frameX="-287" frameY="-108" frameWidth="1980" frameHeight="1080" />
+<SubTexture name="knuckles tweaker idle0014" x="487" y="0" width="486" height="841" frameX="-287" frameY="-108" frameWidth="1980" frameHeight="1080" />
+<SubTexture name="knuckles tweaker idle0015" x="478" y="869" width="465" height="806" frameX="-314" frameY="-123" frameWidth="1980" frameHeight="1080" />
+<SubTexture name="knuckles tweaker idle0016" x="478" y="869" width="465" height="806" frameX="-314" frameY="-123" frameWidth="1980" frameHeight="1080" />
+<SubTexture name="knuckles tweaker idle0017" x="478" y="869" width="465" height="806" frameX="-314" frameY="-123" frameWidth="1980" frameHeight="1080" />
+<SubTexture name="knuckles tweaker idle0018" x="478" y="869" width="465" height="806" frameX="-314" frameY="-123" frameWidth="1980" frameHeight="1080" />
+<SubTexture name="knuckles tweaker idle0019" x="478" y="869" width="465" height="806" frameX="-314" frameY="-123" frameWidth="1980" frameHeight="1080" />
+<SubTexture name="knuckles tweaker idle0020" x="1456" y="0" width="459" height="810" frameX="-303" frameY="-125" frameWidth="1980" frameHeight="1080" />
+<SubTexture name="knuckles tweaker idle0021" x="1456" y="0" width="459" height="810" frameX="-303" frameY="-125" frameWidth="1980" frameHeight="1080" />
+<SubTexture name="knuckles tweaker idle0022" x="1456" y="0" width="459" height="810" frameX="-303" frameY="-125" frameWidth="1980" frameHeight="1080" />
+<SubTexture name="knuckles tweaker idle0023" x="1456" y="0" width="459" height="810" frameX="-303" frameY="-125" frameWidth="1980" frameHeight="1080" />
+<SubTexture name="knuckles tweaker idle0024" x="1456" y="0" width="459" height="810" frameX="-303" frameY="-125" frameWidth="1980" frameHeight="1080" />
+<SubTexture name="knuckles tweaker idle0025" x="1456" y="0" width="459" height="810" frameX="-303" frameY="-125" frameWidth="1980" frameHeight="1080" />
+<SubTexture name="knuckles tweaker idle0026" x="1456" y="0" width="459" height="810" frameX="-303" frameY="-125" frameWidth="1980" frameHeight="1080" />
+<SubTexture name="knuckles tweaker idle0027" x="1456" y="0" width="459" height="810" frameX="-303" frameY="-125" frameWidth="1980" frameHeight="1080" />
+<SubTexture name="knuckles tweaker idle0028" x="1456" y="0" width="459" height="810" frameX="-303" frameY="-125" frameWidth="1980" frameHeight="1080" />
+<SubTexture name="knuckles tweaker idle0029" x="1456" y="0" width="459" height="810" frameX="-303" frameY="-125" frameWidth="1980" frameHeight="1080" />
+</TextureAtlas>

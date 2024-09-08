@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Created with Funkin Packer v0.1.3 https://neeeoo.github.io/funkin-packer/
+-->
+<TextureAtlas imagePath="logo.png" width="6761" height="611">
+	<SubTexture name="logo bumpin0001" x="0" y="0" width="882" height="611" frameX="-44" frameY="-0" frameWidth="926" frameHeight="619"/>
+	<SubTexture name="logo bumpin0002" x="882" y="0" width="860" height="599" frameX="-53" frameY="-6" frameWidth="926" frameHeight="619"/>
+	<SubTexture name="logo bumpin0003" x="1742" y="0" width="852" height="590" frameX="-58" frameY="-10" frameWidth="926" frameHeight="619"/>
+	<SubTexture name="logo bumpin0004" x="2594" y="0" width="839" height="584" frameX="-63" frameY="-13" frameWidth="926" frameHeight="619"/>
+	<SubTexture name="logo bumpin0005" x="3433" y="0" width="834" height="580" frameX="-65" frameY="-15" frameWidth="926" frameHeight="619"/>
+	<SubTexture name="logo bumpin0006" x="4267" y="0" width="832" height="579" frameX="-66" frameY="-16" frameWidth="926" frameHeight="619"/>
+	<SubTexture name="logo bumpin0007" x="5099" y="0" width="831" height="578" frameX="-67" frameY="-16" frameWidth="926" frameHeight="619"/>
+	<SubTexture name="logo bumpin0008" x="5930" y="0" width="831" height="578" frameX="-67" frameY="-16" frameWidth="926" frameHeight="619"/>
+	<SubTexture name="logo bumpin0009" x="5930" y="0" width="831" height="578" frameX="-67" frameY="-16" frameWidth="926" frameHeight="619"/>
+	<SubTexture name="logo bumpin0010" x="5930" y="0" width="831" height="578" frameX="-67" frameY="-16" frameWidth="926" frameHeight="619"/>
+	<SubTexture name="logo bumpin0011" x="5930" y="0" width="831" height="578" frameX="-67" frameY="-16" frameWidth="926" frameHeight="619"/>
+	<SubTexture name="logo bumpin0012" x="5930" y="0" width="831" height="578" frameX="-67" frameY="-16" frameWidth="926" frameHeight="619"/>
+	<SubTexture name="logo bumpin0013" x="5930" y="0" width="831" height="578" frameX="-67" frameY="-16" frameWidth="926" frameHeight="619"/>
+	<SubTexture name="logo bumpin0014" x="5930" y="0" width="831" height="578" frameX="-67" frameY="-16" frameWidth="926" frameHeight="619"/>
+</TextureAtlas>

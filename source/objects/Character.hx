@@ -243,7 +243,7 @@ class Character extends FlxSprite
 			if(heyTimer <= 0)
 			{
 				var anim:String = getAnimationName();
-				if(specialAnim && (anim == 'hey' || anim == 'cheer'))
+				if(specialAnim && (anim == 'hey' || anim == 'cheer' || anim == 'appear'))
 				{
 					specialAnim = false;
 					dance();

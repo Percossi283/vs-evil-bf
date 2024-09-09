@@ -6,6 +6,7 @@ import objects.Bar;
 import flixel.addons.display.shapes.FlxShapeCircle;
 
 import states.stages.StageWeek1 as BackgroundStage;
+import states.TitleState;
 
 class NoteOffsetState extends MusicBeatState
 {
@@ -413,7 +414,7 @@ class NoteOffsetState extends MusicBeatState
 				else
 					FlxG.sound.music.volume = 0;
 			}
-			else FlxG.sound.playMusic(Paths.music('freakyMenu'));
+			else FlxG.sound.playMusic(Paths.music(TitleState.isEvil ? 'cryingTheme' : 'freakyMenu'));
 			FlxG.mouse.visible = false;
 		}
 

@@ -54,8 +54,8 @@ class NotesSubState extends MusicBeatSubstate
 		DiscordClient.changePresence("Note Colors Menu", null);
 		#end
 		
-		var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('menuDesat'));
-		bg.color = 0xFFEA71FD;
+		var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image(states.MainMenuState.getMenuSprite('menuDesat')));
+		bg.color = states.TitleState.isEvil ? 0xFFFFFFFF : 0xFFEA71FD;
 		bg.screenCenter();
 		bg.antialiasing = ClientPrefs.data.antialiasing;
 		add(bg);

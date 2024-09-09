@@ -26,6 +26,7 @@ import cutscenes.DialogueBoxPsych;
 
 import states.StoryMenuState;
 import states.FreeplayState;
+import states.TrueMenuState;
 import states.editors.ChartingState;
 import states.editors.CharacterEditorState;
 
@@ -463,7 +464,7 @@ class PlayState extends MusicBeatState
 		stagesFunc(function(stage:BaseStage) stage.createPost());
 
 		comboGroup = new FlxSpriteGroup();
-		add(comboGroup);
+		// add(comboGroup);
 		noteGroup = new FlxTypedGroup<FlxBasic>();
 		add(noteGroup);
 		uiGroup = new FlxSpriteGroup();
@@ -1723,7 +1724,11 @@ class PlayState extends MusicBeatState
 	}
 
 	public var isDead:Bool = false; //Don't mess with this on Lua!!!
-	function doDeathCheck(?skipHealthCheck:Bool = false) {
+	function doDeathCheck(?skipHealthCheck:Bool = false) 
+	{
+		if (health >= 2)
+			health = 2;
+			
 		if (((skipHealthCheck && instakillOnMiss) || health <= 0) && !practiceMode && !isDead)
 		{
 			var ret:Dynamic = callOnScripts('onGameOver', null, true);
@@ -1829,6 +1834,9 @@ class PlayState extends MusicBeatState
 					FlxG.camera.zoom += flValue1;
 					camHUD.zoom += flValue2;
 				}
+
+			case 'Set Cam Zoom':
+				defaultCamZoom = flValue1 == null ? defaultCamZoom : flValue1;
 
 			case 'Play Animation':
 				//trace('Anim to play: ' + value1);
@@ -2176,7 +2184,7 @@ class PlayState extends MusicBeatState
 					FlxG.sound.playMusic(Paths.music('freakyMenu'));
 					#if DISCORD_ALLOWED DiscordClient.resetClientID(); #end
 
-					MusicBeatState.switchState(new StoryMenuState());
+					MusicBeatState.switchState(FlxG.save.data.evilBF.cycles ? new TrueMenuState() : new StoryMenuState());
 
 					// if ()
 					if(!ClientPrefs.getGameplaySetting('practice') && !ClientPrefs.getGameplaySetting('botplay')) {
@@ -2207,11 +2215,16 @@ class PlayState extends MusicBeatState
 			}
 			else
 			{
-				trace('WENT BACK TO FREEPLAY??');
 				Mods.loadTopMod();
 				#if DISCORD_ALLOWED DiscordClient.resetClientID(); #end
 
-				MusicBeatState.switchState(new FreeplayState());
+				switch(SONG.song.toLowerCase())
+				{
+					case 'cycles':
+						FlxG.save.data.evilBF.cycles = true;
+				}
+
+				MusicBeatState.switchState(FlxG.save.data.evilBF.cycles ? new TrueMenuState() : new StoryMenuState());
 				FlxG.sound.playMusic(Paths.music('freakyMenu'));
 				changedDifficulty = false;
 			}
@@ -2719,6 +2732,9 @@ class PlayState extends MusicBeatState
 				char.playAnim(animToPlay, true);
 				char.holdTimer = 0;
 			}
+
+			if (SONG.song.toLowerCase() == 'cycles' && health >= 0.15)
+				health -= 0.009;
 
 			if (!mustHit && baseCameraPos != null)
 				runCameraMovement(directionAnim);

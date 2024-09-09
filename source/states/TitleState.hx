@@ -98,6 +98,13 @@ class TitleState extends MusicBeatState
 
 		FlxG.save.bind('funkin', CoolUtil.getSavePath());
 
+		if (FlxG.save.data.evilBF == null)
+		{
+			FlxG.save.data.evilBF = {
+				cycles: false
+			};
+		}
+		
 		ClientPrefs.loadPrefs();
 
 		#if CHECK_FOR_UPDATES
@@ -498,6 +505,7 @@ class TitleState extends MusicBeatState
 
 	var skippedIntro:Bool = false;
 	var increaseVolume:Bool = false;
+	var tweened:Bool = false;
 	function skipIntro():Void
 	{
 		if (!skippedIntro)
@@ -513,16 +521,21 @@ class TitleState extends MusicBeatState
 			skippedIntro = true;
 		}
 
-		evilBoyfriend.x = -600;
-		grad.alpha = 0;
-
-		if (isEvil)
+		if (!tweened)
 		{
-			remove(logoBl);
-			evilBoyfriend.loadGraphic(Paths.image('EVIL 2'));
-		}
+			evilBoyfriend.x = -600;
+			grad.alpha = 0;
 
-		FlxTween.tween(grad, {alpha: 1}, 2);
-		FlxTween.tween(evilBoyfriend, {x: evilBoyfriend.x + 600}, 1.5, {ease: FlxEase.expoOut, startDelay: 0.5});
+			if (isEvil)
+			{
+				remove(logoBl);
+				evilBoyfriend.loadGraphic(Paths.image('EVIL 2'));
+			}
+
+			FlxTween.tween(grad, {alpha: 1}, 2);
+			FlxTween.tween(evilBoyfriend, {x: evilBoyfriend.x + 600}, 1.5, {ease: FlxEase.expoOut, startDelay: 0.5});
+
+			tweened = true;
+		}
 	}
 }

@@ -1,7 +1,7 @@
 {
 	"song": {
 		"player1": "bf",
-		"player2": "bf",
+		"player2": "x",
 		"events": [
 			[
 				1500,
@@ -9,6 +9,41 @@
 					[
 						"Cam Zoom Interval",
 						"2",
+						""
+					],
+					[
+						"Remove Rise",
+						"",
+						""
+					]
+				]
+			],
+			[
+				2625,
+				[
+					[
+						"Add Icon",
+						"",
+						""
+					]
+				]
+			],
+			[
+				3468.75,
+				[
+					[
+						"Add Instruction",
+						"",
+						""
+					]
+				]
+			],
+			[
+				13125,
+				[
+					[
+						"Fade BG",
+						"",
 						""
 					]
 				]
@@ -20,6 +55,11 @@
 						"Cam Zoom Interval",
 						"1",
 						""
+					],
+					[
+						"Set Cam Zoom",
+						"0.75",
+						""
 					]
 				]
 			],
@@ -29,6 +69,16 @@
 					[
 						"Cam Zoom Interval",
 						"2",
+						""
+					],
+					[
+						"Add Tails",
+						"",
+						""
+					],
+					[
+						"Set Cam Zoom",
+						"0.87",
 						""
 					]
 				]
@@ -40,6 +90,36 @@
 						"Add Camera Zoom",
 						"",
 						""
+					],
+					[
+						"Set Cam Zoom",
+						"0.75",
+						""
+					]
+				]
+			],
+			[
+				39750,
+				[
+					[
+						"Set Cam Zoom",
+						"0.8",
+						""
+					]
+				]
+			],
+			[
+				40500,
+				[
+					[
+						"Add Knux",
+						"",
+						""
+					],
+					[
+						"Set Cam Zoom",
+						"0.85",
+						""
 					]
 				]
 			],
@@ -49,6 +129,21 @@
 					[
 						"Add Camera Zoom",
 						"",
+						""
+					],
+					[
+						"Set Cam Zoom",
+						"0.75",
+						""
+					]
+				]
+			],
+			[
+				42750,
+				[
+					[
+						"Set Cam Zoom",
+						"0.8",
 						""
 					]
 				]
@@ -74,11 +169,26 @@
 				]
 			],
 			[
+				48750,
+				[
+					[
+						"Set Cam Zoom",
+						"0.85",
+						""
+					]
+				]
+			],
+			[
 				49500,
 				[
 					[
 						"Cam Zoom Interval",
 						"1",
+						""
+					],
+					[
+						"Set Cam Zoom",
+						"0.75",
 						""
 					]
 				]
@@ -90,6 +200,151 @@
 						"Cam Zoom Interval",
 						"2",
 						""
+					],
+					[
+						"Set Cam Zoom",
+						"0.9",
+						""
+					]
+				]
+			],
+			[
+				63375,
+				[
+					[
+						"Set Cam Zoom",
+						"0.75",
+						""
+					]
+				]
+			],
+			[
+				64500,
+				[
+					[
+						"Set Cam Zoom",
+						"0.9",
+						""
+					]
+				]
+			],
+			[
+				65812.5,
+				[
+					[
+						"Set Cam Zoom",
+						"0.8",
+						""
+					]
+				]
+			],
+			[
+				66375,
+				[
+					[
+						"Set Cam Zoom",
+						"0.75",
+						""
+					]
+				]
+			],
+			[
+				67500,
+				[
+					[
+						"Set Cam Zoom",
+						"0.9",
+						""
+					]
+				]
+			],
+			[
+				69375,
+				[
+					[
+						"Set Cam Zoom",
+						"0.75",
+						""
+					]
+				]
+			],
+			[
+				70500,
+				[
+					[
+						"Set Cam Zoom",
+						"0.86",
+						""
+					]
+				]
+			],
+			[
+				73500,
+				[
+					[
+						"Set Cam Zoom",
+						"0.78",
+						""
+					]
+				]
+			],
+			[
+				75000,
+				[
+					[
+						"Set Cam Zoom",
+						"0.85",
+						""
+					]
+				]
+			],
+			[
+				76500,
+				[
+					[
+						"Set Cam Zoom",
+						"0.75",
+						""
+					]
+				]
+			],
+			[
+				78375,
+				[
+					[
+						"Set Cam Zoom",
+						"0.9",
+						""
+					]
+				]
+			],
+			[
+				79500,
+				[
+					[
+						"Set Cam Zoom",
+						"0.75",
+						""
+					]
+				]
+			],
+			[
+				81000,
+				[
+					[
+						"Set Cam Zoom",
+						"0.86",
+						""
+					]
+				]
+			],
+			[
+				83812.5,
+				[
+					[
+						"Set Cam Zoom",
+						"0.85",
+						""
 					]
 				]
 			],
@@ -99,6 +354,26 @@
 					[
 						"Cam Zoom Interval",
 						"-1",
+						""
+					]
+				]
+			],
+			[
+				85500,
+				[
+					[
+						"Set Cam Zoom",
+						"0.75",
+						""
+					]
+				]
+			],
+			[
+				85875,
+				[
+					[
+						"Phase 2",
+						"",
 						""
 					]
 				]
@@ -127,7 +402,7 @@
 				87000,
 				[
 					[
-						"Add Souls",
+						"I AM GOD",
 						"",
 						""
 					]
@@ -288,6 +563,16 @@
 				[
 					[
 						"Add Camera Zoom",
+						"",
+						""
+					]
+				]
+			],
+			[
+				124500,
+				[
+					[
+						"End",
 						"",
 						""
 					]
@@ -4710,6 +4995,15 @@
 				"gfSection": false,
 				"altAnim": false,
 				"mustHitSection": false,
+				"changeBPM": false,
+				"bpm": 160
+			},
+			{
+				"sectionBeats": 4,
+				"sectionNotes": [],
+				"gfSection": false,
+				"altAnim": false,
+				"mustHitSection": true,
 				"changeBPM": false,
 				"bpm": 160
 			}

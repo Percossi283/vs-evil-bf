@@ -75,7 +75,8 @@ class CharacterEditorState extends MusicBeatState
 		camHUD.bgColor.alpha = 0;
 		FlxG.cameras.add(camHUD, false);
 
-		loadBG();
+		dadPosition.set(100, 100);
+		bfPosition.set(770, 100);
 
 		animsTxtGroup = new FlxTypedGroup<FlxText>();
 		silhouettes = new FlxSpriteGroup();
@@ -102,8 +103,7 @@ class CharacterEditorState extends MusicBeatState
 
 		addCharacter();
 
-		cameraFollowPointer = new FlxSprite().loadGraphic(FlxGraphic.fromClass(GraphicCursorCross));
-		cameraFollowPointer.setGraphicSize(40, 40);
+		cameraFollowPointer = new FlxSprite().makeGraphic(40, 40);
 		cameraFollowPointer.updateHitbox();
 		add(cameraFollowPointer);
 
@@ -158,6 +158,8 @@ class CharacterEditorState extends MusicBeatState
 		if(ClientPrefs.data.cacheOnGPU) Paths.clearUnusedMemory();
 
 		super.create();
+
+		camEditor.scroll.set(0, 0);
 	}
 
 	function addHelpScreen()
@@ -237,6 +239,8 @@ class CharacterEditorState extends MusicBeatState
 		updateCharacterPositions();
 		reloadAnimList();
 		if(healthBar != null && healthIcon != null) updateHealthBar();
+
+		trace(character);
 	}
 
 	function makeUIMenu()
@@ -1042,31 +1046,6 @@ class CharacterEditorState extends MusicBeatState
 		}
 	}
 
-	final assetFolder = 'week1';  //load from assets/week1/
-	inline function loadBG()
-	{
-		var lastLoaded = Paths.currentLevel;
-		Paths.currentLevel = assetFolder;
-
-		/////////////
-		// bg data //
-		/////////////
-		var bg:BGSprite = new BGSprite('stageback', -600, -200, 0.9, 0.9);
-		add(bg);
-
-		var stageFront:BGSprite = new BGSprite('stagefront', -650, 600, 0.9, 0.9);
-		stageFront.setGraphicSize(Std.int(stageFront.width * 1.1));
-		stageFront.updateHitbox();
-		add(stageFront);
-
-		dadPosition.set(100, 100);
-		bfPosition.set(770, 100);
-		/////////////
-
-		Paths.currentLevel = lastLoaded;
-	}
-
-
 	inline function updatePointerPos(?snap:Bool = true)
 	{
 		var offX:Float = 0;
@@ -1085,8 +1064,8 @@ class CharacterEditorState extends MusicBeatState
 
 		if(snap)
 		{
-			FlxG.camera.scroll.x = cameraFollowPointer.getMidpoint().x - FlxG.width/2;
-			FlxG.camera.scroll.y = cameraFollowPointer.getMidpoint().y - FlxG.height/2;
+			camEditor.scroll.x = cameraFollowPointer.getMidpoint().x - FlxG.width/2;
+			camEditor.scroll.y = cameraFollowPointer.getMidpoint().y - FlxG.height/2;
 		}
 	}
 

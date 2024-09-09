@@ -1,6 +1,7 @@
 {
 	"songs": [
-		["cycles", "", [0, 0, 0]]
+		["cycles", "", [0, 0, 0]],
+		["redscreen", "", [0, 0, 0]]
 	],
 
 	"weekCharacters": [

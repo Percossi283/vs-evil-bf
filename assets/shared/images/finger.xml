@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="my finger.png">
+<SubTexture name="my finger idle0000" x="0" y="0" width="700" height="500" frameX="0" frameY="0" frameWidth="700" frameHeight="500" />
+<SubTexture name="my finger idle0001" x="0" y="0" width="700" height="500" frameX="0" frameY="0" frameWidth="700" frameHeight="500" />
+<SubTexture name="my finger idle0002" x="0" y="0" width="700" height="500" frameX="0" frameY="0" frameWidth="700" frameHeight="500" />
+<SubTexture name="my finger idle0003" x="0" y="0" width="700" height="500" frameX="0" frameY="0" frameWidth="700" frameHeight="500" />
+<SubTexture name="my finger idle0004" x="700" y="0" width="700" height="500" frameX="0" frameY="0" frameWidth="700" frameHeight="500" />
+<SubTexture name="my finger idle0005" x="700" y="0" width="700" height="500" frameX="0" frameY="0" frameWidth="700" frameHeight="500" />
+<SubTexture name="my finger idle0006" x="700" y="0" width="700" height="500" frameX="0" frameY="0" frameWidth="700" frameHeight="500" />
+<SubTexture name="my finger idle0007" x="700" y="0" width="700" height="500" frameX="0" frameY="0" frameWidth="700" frameHeight="500" />
+<SubTexture name="my finger idle0008" x="0" y="500" width="700" height="500" frameX="0" frameY="0" frameWidth="700" frameHeight="500" />
+<SubTexture name="my finger idle0009" x="0" y="500" width="700" height="500" frameX="0" frameY="0" frameWidth="700" frameHeight="500" />
+<SubTexture name="my finger idle0010" x="0" y="500" width="700" height="500" frameX="0" frameY="0" frameWidth="700" frameHeight="500" />
+<SubTexture name="my finger idle0011" x="0" y="500" width="700" height="500" frameX="0" frameY="0" frameWidth="700" frameHeight="500" />
+<SubTexture name="my finger idle0012" x="700" y="500" width="700" height="500" frameX="0" frameY="0" frameWidth="700" frameHeight="500" />
+<SubTexture name="my finger idle0013" x="700" y="500" width="700" height="500" frameX="0" frameY="0" frameWidth="700" frameHeight="500" />
+<SubTexture name="my finger idle0014" x="700" y="500" width="700" height="500" frameX="0" frameY="0" frameWidth="700" frameHeight="500" />
+<SubTexture name="my finger idle0015" x="1400" y="0" width="700" height="500" frameX="0" frameY="0" frameWidth="700" frameHeight="500" />
+<SubTexture name="my finger idle0016" x="1400" y="0" width="700" height="500" frameX="0" frameY="0" frameWidth="700" frameHeight="500" />
+<SubTexture name="my finger idle0017" x="1400" y="0" width="700" height="500" frameX="0" frameY="0" frameWidth="700" frameHeight="500" />
+<SubTexture name="my finger idle0018" x="1400" y="0" width="700" height="500" frameX="0" frameY="0" frameWidth="700" frameHeight="500" />
+<SubTexture name="my finger idle0019" x="1400" y="500" width="700" height="500" frameX="0" frameY="0" frameWidth="700" frameHeight="500" />
+<SubTexture name="my finger idle0020" x="1400" y="500" width="700" height="500" frameX="0" frameY="0" frameWidth="700" frameHeight="500" />
+<SubTexture name="my finger idle0021" x="1400" y="500" width="700" height="500" frameX="0" frameY="0" frameWidth="700" frameHeight="500" />
+<SubTexture name="my finger idle0022" x="1400" y="500" width="700" height="500" frameX="0" frameY="0" frameWidth="700" frameHeight="500" />
+<SubTexture name="my finger idle0023" x="0" y="1000" width="700" height="500" frameX="0" frameY="0" frameWidth="700" frameHeight="500" />
+<SubTexture name="my finger idle0024" x="0" y="1000" width="700" height="500" frameX="0" frameY="0" frameWidth="700" frameHeight="500" />
+<SubTexture name="my finger idle0025" x="0" y="1000" width="700" height="500" frameX="0" frameY="0" frameWidth="700" frameHeight="500" />
+<SubTexture name="my finger idle0026" x="0" y="1000" width="700" height="500" frameX="0" frameY="0" frameWidth="700" frameHeight="500" />
+<SubTexture name="my finger idle0027" x="700" y="1000" width="700" height="500" frameX="0" frameY="0" frameWidth="700" frameHeight="500" />
+<SubTexture name="my finger idle0028" x="700" y="1000" width="700" height="500" frameX="0" frameY="0" frameWidth="700" frameHeight="500" />
+<SubTexture name="my finger idle0029" x="700" y="1000" width="700" height="500" frameX="0" frameY="0" frameWidth="700" frameHeight="500" />
+</TextureAtlas>

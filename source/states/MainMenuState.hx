@@ -65,7 +65,7 @@ class MainMenuState extends MusicBeatState
 		persistentUpdate = persistentDraw = true;
 
 		var yScroll:Float = Math.max(0.25 - (0.05 * (optionShit.length - 4)), 0.1);
-		var bg:FlxSprite = new FlxSprite(-80).loadGraphic(Paths.image('menuBG'));
+		var bg:FlxSprite = new FlxSprite(-80).loadGraphic(Paths.image(getMenuSprite('menuBG')));
 		bg.antialiasing = ClientPrefs.data.antialiasing;
 		bg.scrollFactor.set(0, yScroll);
 		bg.setGraphicSize(Std.int(bg.width * 1.175));
@@ -76,14 +76,13 @@ class MainMenuState extends MusicBeatState
 		camFollow = new FlxObject(0, 0, 1, 1);
 		add(camFollow);
 
-		magenta = new FlxSprite(-80).loadGraphic(Paths.image('menuDesat'));
+		magenta = new FlxSprite(-80).loadGraphic(Paths.image(getMenuSprite('menuDesat')));
 		magenta.antialiasing = ClientPrefs.data.antialiasing;
 		magenta.scrollFactor.set(0, yScroll);
 		magenta.setGraphicSize(Std.int(magenta.width * 1.175));
 		magenta.updateHitbox();
 		magenta.screenCenter();
 		magenta.visible = false;
-		magenta.color = 0xFFfd719b;
 		add(magenta);
 
 		screen = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, 0xFF000000);
@@ -92,11 +91,11 @@ class MainMenuState extends MusicBeatState
 		add(screen);
 
 		myLittleFinger = new FlxSprite();
-		myLittleFinger.frames = Paths.getSparrowAtlas('my_finger');
-		myLittleFinger.animation.addByPrefix('twiddlefinger', 'my finger', 24, false);		
+		myLittleFinger.frames = Paths.getSparrowAtlas('finger');
+		myLittleFinger.animation.addByPrefix('twiddlefinger', 'my finger', 24, true);		
+		myLittleFinger.animation.play('twiddlefinger');
 		myLittleFinger.alpha = 0;
 		myLittleFinger.scrollFactor.set();
-		myLittleFinger.scale.set(0.5, 0.5);
 		myLittleFinger.screenCenter();
 		add(myLittleFinger);
 
@@ -163,15 +162,6 @@ class MainMenuState extends MusicBeatState
 			}
 
 			MusicBeatState.switchState(new TitleState());
-		}
-
-		if (isEvil && controls.ACCEPT)
-		{
-			PlayState.SONG = Song.loadFromJson('cycles', 'cycles');
-			PlayState.isStoryMode = false;
-			PlayState.storyDifficulty = 1;
-
-			MusicBeatState.switchState(new PlayState());
 		}
 
 		if (!selectedSomethin)
@@ -273,8 +263,24 @@ class MainMenuState extends MusicBeatState
 			{
 				FlxTimer.wait(0.9, ()->
 				{
-					myLittleFinger.alpha = 1;
-					myLittleFinger.animation.play('twiddlefinger');
+					myLittleFinger.scale.set(0.8, 0.8);
+
+					myLittleFinger.angle = 10;
+					FlxTween.tween(myLittleFinger, {alpha: 1, angle: 0}, 2, {ease: FlxEase.expoOut});
+					FlxTween.tween(myLittleFinger.scale, {x: 1, y: 1}, 2, {ease: FlxEase.expoOut});
+
+					FlxTimer.wait(2.7, ()->
+					{
+						FlxTween.tween(myLittleFinger, {alpha: 0, y: myLittleFinger.y + 20}, 1.6, {ease: FlxEase.expoIn});
+						FlxTween.tween(myLittleFinger.scale, {x: 0.7, y: 0.7}, 1.6, {ease: FlxEase.expoIn, onComplete: (twn:FlxTween)->
+						{
+							PlayState.SONG = Song.loadFromJson('cycles', 'cycles');
+							PlayState.isStoryMode = false;
+							PlayState.storyDifficulty = 1;
+
+							MusicBeatState.switchState(new PlayState());
+						}});
+					});
 
 					isEvil = true;
 
@@ -285,6 +291,13 @@ class MainMenuState extends MusicBeatState
 				});
 			}});
 		});
+	}
+
+	public static function getMenuSprite(name:String):String
+	{
+		var freaky:Bool = FlxG.random.bool(0.000001);
+
+		return TitleState.isEvil ? (freaky ? 'FREAKY menu' : 'EVIL menu') : name;
 	}
 
 	function changeItem(huh:Int = 0)

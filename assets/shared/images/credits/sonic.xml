@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath=".png">
+
+  <!-- Generated using [A2]'s XML Generator -->
+  <!-- https://a2source.github.io/ -->
+
+  <SubTexture name="sonic0" x="0" y="0" width="498" height="280"/>
+  <SubTexture name="sonic1" x="498" y="0" width="498" height="280"/>
+  <SubTexture name="sonic2" x="996" y="0" width="498" height="280"/>
+  <SubTexture name="sonic3" x="1494" y="0" width="498" height="280"/>
+  <SubTexture name="sonic4" x="0" y="280" width="498" height="280"/>
+  <SubTexture name="sonic5" x="498" y="280" width="498" height="280"/>
+  <SubTexture name="sonic6" x="996" y="280" width="498" height="280"/>
+  <SubTexture name="sonic7" x="1494" y="280" width="498" height="280"/>
+  <SubTexture name="sonic8" x="0" y="560" width="498" height="280"/>
+  <SubTexture name="sonic9" x="498" y="560" width="498" height="280"/>
+  <SubTexture name="sonic10" x="996" y="560" width="498" height="280"/>
+  <SubTexture name="sonic11" x="1494" y="560" width="498" height="280"/>
+  <SubTexture name="sonic12" x="0" y="840" width="498" height="280"/>
+  <SubTexture name="sonic13" x="498" y="840" width="498" height="280"/>
+  <SubTexture name="sonic14" x="996" y="840" width="498" height="280"/>
+</TextureAtlas>

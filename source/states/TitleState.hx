@@ -186,8 +186,14 @@ class TitleState extends MusicBeatState
 		if (!initialized)
 		{
 			if(FlxG.sound.music == null) {
-				FlxG.sound.playMusic(Paths.music('freakyMenu'), 0);
+				FlxG.sound.playMusic(Paths.music(MENU_MUSIC), 0);
 			}
+		}
+
+		if (FlxG.save.data.evilBF.cycles)
+		{
+			MusicBeatState.switchState(new states.SonicRunningIntroState());
+			return;
 		}
 
 		Conductor.bpm = titleJSON.bpm;
@@ -455,7 +461,7 @@ class TitleState extends MusicBeatState
 			{
 				case 1:
 					//FlxG.sound.music.stop();
-					FlxG.sound.playMusic(Paths.music('freakyMenu'), 0);
+					FlxG.sound.playMusic(Paths.music(MENU_MUSIC), 0);
 					FlxG.sound.music.fadeIn(4, 0, 0.7);
 				case 2:
 					#if PSYCH_WATERMARKS
@@ -537,5 +543,11 @@ class TitleState extends MusicBeatState
 
 			tweened = true;
 		}
+	}
+
+	public static var MENU_MUSIC(get, never):String;
+	public static function get_MENU_MUSIC():String
+	{
+		return (FlxG.save.data.evilBF.cycles || isEvil) ? 'cryingTheme' : 'freakyMenu';
 	}
 }

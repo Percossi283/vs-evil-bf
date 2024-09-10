@@ -1,7 +1,7 @@
 {
 	"song": {
-		"player1": "cyborg-invis",
-		"gfVersion": "cyborg-invis",
+		"player1": "bf",
+		"gfVersion": "gf",
 		"notes": [
 			{
 				"sectionBeats": 4,
@@ -3914,8 +3914,6 @@
 				"bpm": 150
 			},
 			{
-				"gfSection": false,
-				"altAnim": false,
 				"sectionNotes": [
 					[
 						99000,
@@ -3968,14 +3966,14 @@
 						0
 					]
 				],
-				"bpm": 160,
 				"sectionBeats": 4,
+				"gfSection": false,
+				"altAnim": false,
+				"bpm": 160,
 				"changeBPM": false,
 				"mustHitSection": false
 			},
 			{
-				"gfSection": false,
-				"altAnim": false,
 				"sectionNotes": [
 					[
 						100500,
@@ -4028,14 +4026,14 @@
 						0
 					]
 				],
-				"bpm": 160,
 				"sectionBeats": 4,
+				"gfSection": false,
+				"altAnim": false,
+				"bpm": 160,
 				"changeBPM": false,
 				"mustHitSection": false
 			},
 			{
-				"gfSection": false,
-				"altAnim": false,
 				"sectionNotes": [
 					[
 						102000,
@@ -4088,14 +4086,14 @@
 						0
 					]
 				],
-				"bpm": 160,
 				"sectionBeats": 4,
+				"gfSection": false,
+				"altAnim": false,
+				"bpm": 160,
 				"changeBPM": false,
 				"mustHitSection": false
 			},
 			{
-				"gfSection": false,
-				"altAnim": false,
 				"sectionNotes": [
 					[
 						103500,
@@ -4148,14 +4146,14 @@
 						0
 					]
 				],
-				"bpm": 160,
 				"sectionBeats": 4,
+				"gfSection": false,
+				"altAnim": false,
+				"bpm": 160,
 				"changeBPM": false,
 				"mustHitSection": false
 			},
 			{
-				"gfSection": false,
-				"altAnim": false,
 				"sectionNotes": [
 					[
 						105000,
@@ -4208,14 +4206,14 @@
 						0
 					]
 				],
-				"bpm": 160,
 				"sectionBeats": 4,
+				"gfSection": false,
+				"altAnim": false,
+				"bpm": 160,
 				"changeBPM": false,
 				"mustHitSection": false
 			},
 			{
-				"gfSection": false,
-				"altAnim": false,
 				"sectionNotes": [
 					[
 						106500,
@@ -4263,14 +4261,14 @@
 						0
 					]
 				],
-				"bpm": 160,
 				"sectionBeats": 4,
+				"gfSection": false,
+				"altAnim": false,
+				"bpm": 160,
 				"changeBPM": false,
 				"mustHitSection": false
 			},
 			{
-				"gfSection": false,
-				"altAnim": false,
 				"sectionNotes": [
 					[
 						108000,
@@ -4323,14 +4321,14 @@
 						0
 					]
 				],
-				"bpm": 160,
 				"sectionBeats": 4,
+				"gfSection": false,
+				"altAnim": false,
+				"bpm": 160,
 				"changeBPM": false,
 				"mustHitSection": false
 			},
 			{
-				"gfSection": false,
-				"altAnim": false,
 				"sectionNotes": [
 					[
 						109500,
@@ -4378,14 +4376,14 @@
 						0
 					]
 				],
-				"bpm": 160,
 				"sectionBeats": 4,
+				"gfSection": false,
+				"altAnim": false,
+				"bpm": 160,
 				"changeBPM": false,
 				"mustHitSection": false
 			},
 			{
-				"gfSection": false,
-				"altAnim": false,
 				"sectionNotes": [
 					[
 						111000,
@@ -4438,14 +4436,14 @@
 						0
 					]
 				],
-				"bpm": 160,
 				"sectionBeats": 4,
+				"gfSection": false,
+				"altAnim": false,
+				"bpm": 160,
 				"changeBPM": false,
 				"mustHitSection": false
 			},
 			{
-				"gfSection": false,
-				"altAnim": false,
 				"sectionNotes": [
 					[
 						112500,
@@ -4488,14 +4486,14 @@
 						0
 					]
 				],
-				"bpm": 160,
 				"sectionBeats": 4,
+				"gfSection": false,
+				"altAnim": false,
+				"bpm": 160,
 				"changeBPM": false,
 				"mustHitSection": false
 			},
 			{
-				"gfSection": false,
-				"altAnim": false,
 				"sectionNotes": [
 					[
 						114000,
@@ -4538,14 +4536,14 @@
 						0
 					]
 				],
-				"bpm": 160,
 				"sectionBeats": 4,
+				"gfSection": false,
+				"altAnim": false,
+				"bpm": 160,
 				"changeBPM": false,
 				"mustHitSection": false
 			},
 			{
-				"gfSection": false,
-				"altAnim": false,
 				"sectionNotes": [
 					[
 						115500,
@@ -4588,14 +4586,14 @@
 						0
 					]
 				],
-				"bpm": 160,
 				"sectionBeats": 4,
+				"gfSection": false,
+				"altAnim": false,
+				"bpm": 160,
 				"changeBPM": false,
 				"mustHitSection": false
 			},
 			{
-				"gfSection": false,
-				"altAnim": false,
 				"sectionNotes": [
 					[
 						117000,
@@ -4638,14 +4636,14 @@
 						0
 					]
 				],
-				"bpm": 160,
 				"sectionBeats": 4,
+				"gfSection": false,
+				"altAnim": false,
+				"bpm": 160,
 				"changeBPM": false,
 				"mustHitSection": false
 			},
 			{
-				"gfSection": false,
-				"altAnim": false,
 				"sectionNotes": [
 					[
 						118500,
@@ -4688,14 +4686,14 @@
 						0
 					]
 				],
-				"bpm": 160,
 				"sectionBeats": 4,
+				"gfSection": false,
+				"altAnim": false,
+				"bpm": 160,
 				"changeBPM": false,
 				"mustHitSection": false
 			},
 			{
-				"gfSection": false,
-				"altAnim": false,
 				"sectionNotes": [
 					[
 						120000,
@@ -4743,14 +4741,14 @@
 						0
 					]
 				],
-				"bpm": 160,
 				"sectionBeats": 4,
+				"gfSection": false,
+				"altAnim": false,
+				"bpm": 160,
 				"changeBPM": false,
 				"mustHitSection": false
 			},
 			{
-				"gfSection": false,
-				"altAnim": false,
 				"sectionNotes": [
 					[
 						121500,
@@ -4793,14 +4791,14 @@
 						0
 					]
 				],
-				"bpm": 160,
 				"sectionBeats": 4,
+				"gfSection": false,
+				"altAnim": false,
+				"bpm": 160,
 				"changeBPM": false,
 				"mustHitSection": false
 			},
 			{
-				"gfSection": false,
-				"altAnim": false,
 				"sectionNotes": [
 					[
 						123000,
@@ -4848,14 +4846,14 @@
 						0
 					]
 				],
-				"bpm": 160,
 				"sectionBeats": 4,
+				"gfSection": false,
+				"altAnim": false,
+				"bpm": 160,
 				"changeBPM": false,
 				"mustHitSection": false
 			},
 			{
-				"gfSection": false,
-				"altAnim": false,
 				"sectionNotes": [
 					[
 						124500,
@@ -4883,26 +4881,39 @@
 						0
 					]
 				],
-				"bpm": 160,
 				"sectionBeats": 4,
+				"gfSection": false,
+				"altAnim": false,
+				"bpm": 160,
 				"changeBPM": false,
 				"mustHitSection": false
 			},
 			{
+				"sectionNotes": [],
+				"sectionBeats": 4,
 				"gfSection": false,
 				"altAnim": false,
-				"sectionNotes": [],
 				"bpm": 160,
-				"sectionBeats": 4,
 				"changeBPM": false,
 				"mustHitSection": false
 			}
 		],
-		"events": [],
-		"player2": "cicada",
-		"song": "redscreen",
+		"events": [
+			[
+				124500,
+				[
+					[
+						"Fade BG",
+						"",
+						""
+					]
+				]
+			]
+		],
+		"player2": "bf",
+		"song": "Redscreen",
 		"needsVoices": false,
-		"stage": "daroom",
+		"stage": "redscreen",
 		"speed": 3.3,
 		"bpm": 160
 	}

@@ -24,7 +24,4 @@ art/build_html.bat
 art/build_html-debug.bat
 
 ### fuck
-export/release/windows/haxe
-export/release/windows/obj
-export/release/windows/bin/crash
-export/release/windows/bin/assets
+export/

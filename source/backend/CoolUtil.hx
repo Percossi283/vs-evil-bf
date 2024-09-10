@@ -126,6 +126,27 @@ class CoolUtil
 		#end
 	}
 
+	public static function steamMessage(addFunc:Dynamic)
+	{
+		var message:FlxSprite = new FlxSprite().loadGraphic(Paths.image('steamhappy/${FlxG.random.int(0, 2)}'));
+		message.y += 68;
+
+		addFunc(message);
+
+		FlxG.sound.play(Paths.sound('steam'));
+
+		FlxTween.tween(message, {y: message.y - 68}, 0.1, {onComplete: (twn:FlxTween) ->
+		{
+			FlxTimer.wait(3, ()->
+			{
+				FlxTween.tween(message, {y: message.y + 68}, 0.1, {onComplete: (twn:FlxTween) ->
+				{
+					message.destroy();
+				}});
+			});
+		}});
+	}
+
 	/**
 		Helper Function to Fix Save Files for Flixel 5
 

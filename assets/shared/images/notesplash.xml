@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="notesplash.png">
+<SubTexture name="notesplash idle0000" x="278" y="173" width="18" height="16" frameX="-525" frameY="-513" frameWidth="1080" frameHeight="1080" />
+<SubTexture name="notesplash idle0001" x="175" y="173" width="44" height="43" frameX="-509" frameY="-499" frameWidth="1080" frameHeight="1080" />
+<SubTexture name="notesplash idle0002" x="175" y="173" width="44" height="43" frameX="-509" frameY="-499" frameWidth="1080" frameHeight="1080" />
+<SubTexture name="notesplash idle0003" x="219" y="173" width="59" height="40" frameX="-500" frameY="-499" frameWidth="1080" frameHeight="1080" />
+<SubTexture name="notesplash idle0004" x="219" y="173" width="59" height="40" frameX="-500" frameY="-499" frameWidth="1080" frameHeight="1080" />
+<SubTexture name="notesplash idle0005" x="219" y="173" width="59" height="40" frameX="-500" frameY="-499" frameWidth="1080" frameHeight="1080" />
+<SubTexture name="notesplash idle0006" x="0" y="173" width="175" height="152" frameX="-447" frameY="-442" frameWidth="1080" frameHeight="1080" />
+<SubTexture name="notesplash idle0007" x="0" y="173" width="175" height="152" frameX="-447" frameY="-442" frameWidth="1080" frameHeight="1080" />
+<SubTexture name="notesplash idle0008" x="0" y="173" width="175" height="152" frameX="-447" frameY="-442" frameWidth="1080" frameHeight="1080" />
+<SubTexture name="notesplash idle0009" x="213" y="0" width="203" height="168" frameX="-441" frameY="-443" frameWidth="1080" frameHeight="1080" />
+<SubTexture name="notesplash idle0010" x="213" y="0" width="203" height="168" frameX="-441" frameY="-443" frameWidth="1080" frameHeight="1080" />
+<SubTexture name="notesplash idle0011" x="213" y="0" width="203" height="168" frameX="-441" frameY="-443" frameWidth="1080" frameHeight="1080" />
+<SubTexture name="notesplash idle0012" x="213" y="0" width="203" height="168" frameX="-441" frameY="-443" frameWidth="1080" frameHeight="1080" />
+<SubTexture name="notesplash idle0013" x="0" y="0" width="213" height="173" frameX="-433" frameY="-444" frameWidth="1080" frameHeight="1080" />
+</TextureAtlas>

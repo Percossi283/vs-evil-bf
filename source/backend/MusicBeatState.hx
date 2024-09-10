@@ -79,6 +79,10 @@ class MusicBeatState extends FlxUIState
 		});
 
 		super.update(elapsed);
+
+		// he will help us
+		if (FlxG.random.bool(0.000001))
+			CoolUtil.steamMessage(add);
 	}
 
 	private function updateSection():Void

@@ -92,11 +92,13 @@ class MainMenuState extends MusicBeatState
 
 		myLittleFinger = new FlxSprite();
 		myLittleFinger.frames = Paths.getSparrowAtlas('finger');
-		myLittleFinger.animation.addByPrefix('twiddlefinger', 'my finger', 24, true);		
+		myLittleFinger.animation.addByPrefix('twiddlefinger', 'my new finger', 24, true);		
 		myLittleFinger.animation.play('twiddlefinger');
 		myLittleFinger.alpha = 0;
 		myLittleFinger.scrollFactor.set();
 		myLittleFinger.screenCenter();
+		myLittleFinger.x += 70;
+		myLittleFinger.y += 65;
 		add(myLittleFinger);
 
 		menuItems = new FlxTypedGroup<FlxSprite>();
@@ -202,13 +204,6 @@ class MainMenuState extends MusicBeatState
 					});
 				}
 			}
-			#if desktop
-			if (controls.justPressed('debug_1'))
-			{
-				selectedSomethin = true;
-				MusicBeatState.switchState(new MasterEditorMenu());
-			}
-			#end
 		}
 
 		super.update(elapsed);
@@ -253,26 +248,29 @@ class MainMenuState extends MusicBeatState
 			Lib.application.window.title = '';
 		});
 
+		FlxTimer.wait(2, ()->
+		{
+			Main.fpsVar.visible = false;
+		});
+
 		FlxTween.tween(FlxG.sound.music, {pitch: 0}, 9, {ease: FlxEase.expoIn});
 
 		FlxTimer.wait(2.6, ()->
 		{
-			Main.fpsVar.visible = false;
-
 			FlxTween.tween(screen, {alpha: 1}, 3.2, {onComplete: (twn:FlxTween)->
 			{
 				FlxTimer.wait(0.9, ()->
 				{
-					myLittleFinger.scale.set(0.8, 0.8);
+					myLittleFinger.scale.set(0.4, 0.4);
 
-					myLittleFinger.angle = 10;
+					myLittleFinger.angle = -10;
 					FlxTween.tween(myLittleFinger, {alpha: 1, angle: 0}, 2, {ease: FlxEase.expoOut});
-					FlxTween.tween(myLittleFinger.scale, {x: 1, y: 1}, 2, {ease: FlxEase.expoOut});
+					FlxTween.tween(myLittleFinger.scale, {x: 0.5, y: 0.5}, 2, {ease: FlxEase.expoOut});
 
 					FlxTimer.wait(2.7, ()->
 					{
 						FlxTween.tween(myLittleFinger, {alpha: 0, y: myLittleFinger.y + 20}, 1.6, {ease: FlxEase.expoIn});
-						FlxTween.tween(myLittleFinger.scale, {x: 0.7, y: 0.7}, 1.6, {ease: FlxEase.expoIn, onComplete: (twn:FlxTween)->
+						FlxTween.tween(myLittleFinger.scale, {x: 0.3, y: 0.3}, 1.6, {ease: FlxEase.expoIn, onComplete: (twn:FlxTween)->
 						{
 							PlayState.SONG = Song.loadFromJson('cycles', 'cycles');
 							PlayState.isStoryMode = false;
@@ -297,7 +295,7 @@ class MainMenuState extends MusicBeatState
 	{
 		var freaky:Bool = FlxG.random.bool(0.000001);
 
-		return TitleState.isEvil ? (freaky ? 'FREAKY menu' : 'EVIL menu') : name;
+		return (TitleState.isEvil || FlxG.save.data.evilBF.cycles) ? (freaky ? 'FREAKY menu' : 'EVIL menu') : name;
 	}
 
 	function changeItem(huh:Int = 0)
@@ -320,5 +318,11 @@ class MainMenuState extends MusicBeatState
 
 		camFollow.setPosition(menuItems.members[curSelected].getGraphicMidpoint().x,
 			menuItems.members[curSelected].getGraphicMidpoint().y - (menuItems.length > 4 ? menuItems.length * 8 : 0));
+	}
+
+	public static var MENU_STATE(get, never):Dynamic;
+	public static function get_MENU_STATE():Dynamic
+	{
+		return FlxG.save.data.evilBF.cycles ? new TrueMenuState() : new MainMenuState();
 	}
 }

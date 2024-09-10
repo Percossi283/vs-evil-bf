@@ -31,12 +31,13 @@ import states.editors.ChartingState;
 import states.editors.CharacterEditorState;
 
 import substates.PauseSubState;
-import substates.GameOverSubstate;
 
 #if !flash
 import flixel.addons.display.FlxRuntimeShader;
 import openfl.filters.ShaderFilter;
 #end
+
+import flash.filters.ShaderFilter as FlashFilter;
 
 #if VIDEOS_ALLOWED
 #if (hxCodec >= "3.0.0") import hxcodec.flixel.FlxVideo as VideoHandler;
@@ -335,7 +336,6 @@ class PlayState extends MusicBeatState
 		detailsPausedText = "Paused - " + detailsText;
 		#end
 
-		GameOverSubstate.resetVariables();
 		songName = Paths.formatToSongPath(SONG.song);
 		if(SONG.stage == null || SONG.stage.length < 1) {
 			SONG.stage = StageData.vanillaSongStage(songName);
@@ -387,6 +387,7 @@ class PlayState extends MusicBeatState
 		{
 			case 'stage': new states.stages.StageWeek1(); //Week 1
 			case 'cycles': new states.stages.Cycles();
+			case 'redscreen': new states.stages.Redscreen();
 		}
 
 		if(isPixelStage) {
@@ -461,7 +462,6 @@ class PlayState extends MusicBeatState
 			if(gf != null)
 				gf.visible = false;
 		}
-		stagesFunc(function(stage:BaseStage) stage.createPost());
 
 		comboGroup = new FlxSpriteGroup();
 		// add(comboGroup);
@@ -485,6 +485,8 @@ class PlayState extends MusicBeatState
 		generateSong(SONG.song);
 
 		noteGroup.add(grpNoteSplashes);
+
+		stagesFunc(function(stage:BaseStage) stage.createPost());
 
 		camFollow = new FlxObject(0, 0, 1, 1);
 		camFollow.setPosition(camPos.x, camPos.y);
@@ -559,11 +561,6 @@ class PlayState extends MusicBeatState
 		if(ClientPrefs.data.hitsoundVolume > 0) Paths.sound('hitsound');
 		for (i in 1...4) Paths.sound('missnote$i');
 		Paths.image('alphabet');
-
-		if (PauseSubState.songName != null)
-			Paths.music(PauseSubState.songName);
-		else if(Paths.formatToSongPath(ClientPrefs.data.pauseMusic) != 'none')
-			Paths.music(Paths.formatToSongPath(ClientPrefs.data.pauseMusic));
 
 		resetRPC();
 
@@ -1369,8 +1366,17 @@ class PlayState extends MusicBeatState
 	public var skipArrowStartTween:Bool = false; //for lua
 	private function generateStaticArrows(player:Int):Void
 	{
-		var strumLineX:Float = STRUM_X;
+		var strumLineX:Float = (SONG.song.toLowerCase() == 'redscreen' && player == 1) ? STRUM_X_OLD + 310 : STRUM_X;
 		var strumLineY:Float = ClientPrefs.data.downScroll ? (FlxG.height - 150) : 50;
+
+		if (SONG.song.toLowerCase() == 'redscreen')
+		{
+			if (ClientPrefs.data.downScroll)
+				strumLineY += 120;
+			else
+				strumLineY -= 120;
+		}
+
 		for (i in 0...4)
 		{
 			// FlxG.log.add(i);
@@ -1527,9 +1533,9 @@ class PlayState extends MusicBeatState
 		if(!endingSong && !inCutscene && allowDebugKeys)
 		{
 			if (controls.justPressed('debug_1'))
-				openChartEditor();
+				dieFriend(); /*openChartEditor();*/
 			else if (controls.justPressed('debug_2'))
-				openCharacterEditor();
+				dieFriend();  /*openCharacterEditor();*/
 		}
 
 		if (startedCountdown && !paused)
@@ -1548,8 +1554,6 @@ class PlayState extends MusicBeatState
 			songPercent = (curTime / songLength);
 
 			var songCalc:Float = (songLength - curTime);
-			if(ClientPrefs.data.timeBarType == 'Time Elapsed') songCalc = curTime;
-
 			var secondsTotal:Int = Math.floor(songCalc / 1000);
 			if(secondsTotal < 0) secondsTotal = 0;
 		}
@@ -1669,6 +1673,9 @@ class PlayState extends MusicBeatState
 
 	function openPauseMenu()
 	{
+		if (isDead)
+			return;
+
 		FlxG.camera.followLerp = 0;
 		persistentUpdate = false;
 		persistentDraw = true;
@@ -1714,6 +1721,9 @@ class PlayState extends MusicBeatState
 
 	function openCharacterEditor()
 	{
+		if (isDead)
+			return;
+
 		FlxG.camera.followLerp = 0;
 		persistentUpdate = false;
 		paused = true;
@@ -1733,38 +1743,56 @@ class PlayState extends MusicBeatState
 		{
 			var ret:Dynamic = callOnScripts('onGameOver', null, true);
 			if(ret != LuaUtils.Function_Stop) {
-				FlxG.animationTimeScale = 1;
-				boyfriend.stunned = true;
 				deathCounter++;
 
-				paused = true;
-
-				vocals.stop();
-				opponentVocals.stop();
-				FlxG.sound.music.stop();
-
-				persistentUpdate = false;
-				persistentDraw = false;
-				FlxTimer.globalManager.clear();
-				FlxTween.globalManager.clear();
-				#if LUA_ALLOWED
-				modchartTimers.clear();
-				modchartTweens.clear();
-				#end
-
-				openSubState(new GameOverSubstate());
-
-				// MusicBeatState.switchState(new GameOverState(boyfriend.getScreenPosition().x, boyfriend.getScreenPosition().y));
+				dieFriend();
 
 				#if DISCORD_ALLOWED
 				// Game Over doesn't get his its variable because it's only used here
-				if(autoUpdateRPC) DiscordClient.changePresence("Game Over - " + detailsText, SONG.song);
+				if(autoUpdateRPC) DiscordClient.changePresence('GAME OVER', SONG.song);
 				#end
-				isDead = true;
 				return true;
 			}
 		}
 		return false;
+	}
+
+	function dieFriend()
+	{
+		paused = true;
+		isDead = true;
+
+		playbackRate = 0;
+
+		dad.animation.curAnim.looped = true;
+		dad.holdTimer = 0;
+
+		vocals.stop();
+		opponentVocals.stop();
+		FlxG.sound.music.stop();
+
+		persistentUpdate = false;
+		persistentDraw = false;
+		FlxTimer.globalManager.clear();
+		FlxTween.globalManager.clear();
+		#if LUA_ALLOWED
+		modchartTimers.clear();
+		modchartTweens.clear();
+		#end
+
+		if (ClientPrefs.data.shaders)
+			FlxG.game.setFilters([new FlashFilter(new shaders.BlueScreen())]);
+
+		FlxTimer.wait(1.688, ()->
+		{
+			Sys.exit(0);
+		});
+
+		camZooming = false;
+
+		FlxG.sound.play(Paths.sound('death'));
+
+		FlxG.animationTimeScale = 0;
 	}
 
 	public function checkEventNote() {
@@ -2181,7 +2209,6 @@ class PlayState extends MusicBeatState
 				if (storyPlaylist.length <= 0)
 				{
 					Mods.loadTopMod();
-					FlxG.sound.playMusic(Paths.music('freakyMenu'));
 					#if DISCORD_ALLOWED DiscordClient.resetClientID(); #end
 
 					MusicBeatState.switchState(FlxG.save.data.evilBF.cycles ? new TrueMenuState() : new StoryMenuState());
@@ -2224,8 +2251,9 @@ class PlayState extends MusicBeatState
 						FlxG.save.data.evilBF.cycles = true;
 				}
 
+				FlxG.save.flush();
+
 				MusicBeatState.switchState(FlxG.save.data.evilBF.cycles ? new TrueMenuState() : new StoryMenuState());
-				FlxG.sound.playMusic(Paths.music('freakyMenu'));
 				changedDifficulty = false;
 			}
 			transitioning = true;
@@ -2900,7 +2928,6 @@ class PlayState extends MusicBeatState
 		FlxG.stage.removeEventListener(KeyboardEvent.KEY_UP, onKeyRelease);
 		FlxG.animationTimeScale = 1;
 		#if FLX_PITCH FlxG.sound.music.pitch = 1; #end
-		Note.globalRgbShaders = [];
 		backend.NoteTypesConfig.clearNoteTypesData();
 		instance = null;
 		super.destroy();

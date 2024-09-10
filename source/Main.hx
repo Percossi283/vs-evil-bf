@@ -12,6 +12,7 @@ import flixel.FlxState;
 import haxe.io.Path;
 import openfl.Assets;
 import openfl.Lib;
+import lime.graphics.Image;
 import openfl.display.Sprite;
 import openfl.events.Event;
 import openfl.display.StageScaleMode;
@@ -134,6 +135,14 @@ class Main extends Sprite
 		#if DISCORD_ALLOWED
 		DiscordClient.prepare();
 		#end
+
+		if (FlxG.save.data.evilBF.cycles)
+		{
+			var icon:Image = Image.fromFile(Paths.modsImages('blank'));
+			Lib.application.window.setIcon(icon);
+
+			Lib.application.window.title = 'WELCOME BACK';
+		}
 
 		// shader coords fix
 		FlxG.signals.gameResized.add(function (w, h) {

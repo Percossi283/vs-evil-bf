@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Created with Funkin Packer v0.1.3 https://neeeoo.github.io/funkin-packer/
+-->
+<TextureAtlas imagePath="triki.png" width="658" height="423">
+	<SubTexture name="triki idle" x="350" y="0" width="308" height="389" frameX="-31" frameY="-20" frameWidth="367" frameHeight="423"/>
+	<SubTexture name="triki revealed" x="0" y="0" width="350" height="423" frameX="-17" frameY="-0" frameWidth="367" frameHeight="423"/>
+</TextureAtlas>

@@ -24,4 +24,4 @@ art/build_html.bat
 art/build_html-debug.bat
 
 ### fuck
-export/
+export/*

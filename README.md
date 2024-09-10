@@ -9,11 +9,17 @@ WITH THE POWER OF RAPPING, DEFEAT HIM AND SAVE YOUR HOT GIRLFRIEND!!
 # CREDITS
 
 [H0nkish](https://twitter.com/H0nkish) - Cycles Remix
+
 [JoeDoughBoi](https://twitter.com/losermakesgames) - Lord X Creator
+
 [Cooey](https://twitter.com/cooey05) - Artist & Animator
+
 [Triki Troy](https://twitter.com/Triki_Tr0y) - Artist & Animator
+
 [Awaken](https://twitter.com/BakingMeshes) - Animator
+
 [Junebug](https://twitter.com/junebug_7801) - Charter
+
 [[A2]](https://a2source.github.io) - Programmer & Animator
 
 ![](https://raw.githubusercontent.com/A2source/A2archive/main/sonic-sonic-the-hedgehog.gif)

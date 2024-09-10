@@ -20,6 +20,6 @@ WITH THE POWER OF RAPPING, DEFEAT HIM AND SAVE YOUR HOT GIRLFRIEND!!
 
 [Junebug](https://twitter.com/junebug_7801) - Charter
 
-[[A2]](https://a2source.github.io) - Programmer & Animator
+[[A2]](https://a2source.github.io) - Programmer & Animator (I also made the credits music :p)
 
 ![](https://raw.githubusercontent.com/A2source/A2archive/main/sonic-sonic-the-hedgehog.gif)

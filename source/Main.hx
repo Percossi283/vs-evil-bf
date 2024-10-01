@@ -18,6 +18,7 @@ import openfl.events.Event;
 import openfl.display.StageScaleMode;
 import lime.app.Application;
 import states.TitleState;
+import mobile.states.CopyState;
 
 #if linux
 import lime.graphics.Image;
@@ -60,14 +61,21 @@ class Main extends Sprite
 
 	public function new()
 	{
+		#if mobile
+		#if android
+		SUtil.doPermissionsShit();
+		#end
+		Sys.setCwd(SUtil.getStorageDirectory());
+		#end
 		super();
 
 		// Credits to MAJigsaw77 (he's the og author for this code)
-		#if android
-		Sys.setCwd(Path.addTrailingSlash(Context.getExternalFilesDir()));
-		#elseif ios
-		Sys.setCwd(lime.system.System.applicationStorageDirectory);
-		#end
+		//#if android
+		//Sys.setCwd(Path.addTrailingSlash(Context.getExternalFilesDir()));
+		//#elseif ios
+		//Sys.setCwd(lime.system.System.applicationStorageDirectory);
+		//#end
+		mobile.backend.CrashHandler.init();
 
 		if (stage != null)
 		{
@@ -106,9 +114,8 @@ class Main extends Sprite
 		#if LUA_ALLOWED Lua.set_callbacks_function(cpp.Callable.fromStaticFunction(psychlua.CallbackHandler.call)); #end
 		Controls.instance = new Controls();
 		ClientPrefs.loadDefaultKeys();
-		addChild(new FlxGame(game.width, game.height, game.initialState, #if (flixel < "5.0.0") game.zoom, #end game.framerate, game.framerate, game.skipSplash, game.startFullscreen));
+		addChild(new FlxGame(game.width, game.height, #if (mobile && MODS_ALLOWED) CopyState.checkExistingFiles() ? game.initialState : CopyState #else game.initialState #end, #if (flixel < "5.0.0") game.zoom, #end game.framerate, game.framerate, game.skipSplash, game.startFullscreen));
 
-		#if !mobile
 		fpsVar = new FPSCounter(10, 3, 0xFFFFFF);
 		addChild(fpsVar);
 		Lib.current.stage.align = "tl";
@@ -116,7 +123,6 @@ class Main extends Sprite
 		if(fpsVar != null) {
 			fpsVar.visible = ClientPrefs.data.showFPS;
 		}
-		#end
 
 		#if linux
 		var icon = Image.fromFile("icon.png");
@@ -143,6 +149,8 @@ class Main extends Sprite
 
 			Lib.application.window.title = 'WELCOME BACK';
 		}
+
+		#if android FlxG.android.preventDefaultKeys = [BACK]; #end
 
 		// shader coords fix
 		FlxG.signals.gameResized.add(function (w, h) {

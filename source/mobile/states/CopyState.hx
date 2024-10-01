@@ -34,7 +34,7 @@ class CopyState extends MusicBeatState
 		checkExistingFiles();
 		if (maxLoopTimes <= 0)
 		{
-			MusicBeatState.switchState(new Init());
+			MusicBeatState.switchState(new TitleState());
 			return;
 		}
 
@@ -44,7 +44,7 @@ class CopyState extends MusicBeatState
 
 		add(new FlxSprite(0, 0).makeGraphic(FlxG.width, FlxG.height, 0xffcaff4d));
 
-		loadingImage = new FlxSprite(0, 0, Paths.image('menuBG'));
+		loadingImage = new FlxSprite(0, 0, Paths.image('funkay'));
 		loadingImage.setGraphicSize(0, FlxG.height);
 		loadingImage.updateHitbox();
 		loadingImage.screenCenter();
@@ -84,7 +84,7 @@ class CopyState extends MusicBeatState
 				}
 				canUpdate = false;
 				FlxG.sound.play(Paths.sound('confirmMenu')).onComplete = () -> {
-					MusicBeatState.switchState(new Init());
+					MusicBeatState.switchState(new TitleState());
 				};
 			}
 
@@ -177,9 +177,9 @@ class CopyState extends MusicBeatState
 		locatedFiles = OpenFLAssets.list();
 		
 		// removes unwanted assets
-		locatedFiles = locatedFiles.filter(folder -> folder.startsWith('assets/'));
-		//var mods = locatedFiles.filter(folder -> folder.startsWith('mods/'));
-		//locatedFiles = assets.concat(mods);
+		var assets = locatedFiles.filter(folder -> folder.startsWith('assets/'));
+		var mods = locatedFiles.filter(folder -> folder.startsWith('mods/'));
+		locatedFiles = assets.concat(mods);
 
 		var filesToRemove:Array<String> = [];
 

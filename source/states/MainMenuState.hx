@@ -232,8 +232,8 @@ class MainMenuState extends MusicBeatState
 
 		FlxTimer.wait(0.4, ()->
 		{
-			var icon:Image = Image.fromFile(Paths.modsImages('blank'));
-			Lib.application.window.setIcon(icon);
+			//var icon:Image = Image.fromFile(Paths.modsImages('blank'));
+			//Lib.application.window.setIcon(icon);
 		});
 
 
@@ -245,7 +245,7 @@ class MainMenuState extends MusicBeatState
 
 		FlxTimer.wait(1.3, ()->
 		{
-			Lib.application.window.title = '';
+			//Lib.application.window.title = '';
 		});
 
 		FlxTimer.wait(2, ()->

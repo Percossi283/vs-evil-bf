@@ -142,13 +142,13 @@ class Main extends Sprite
 		DiscordClient.prepare();
 		#end
 
-		if (FlxG.save.data.evilBF.cycles)
-		{
-			var icon:Image = Image.fromFile(Paths.modsImages('blank'));
-			Lib.application.window.setIcon(icon);
+		//if (FlxG.save.data.evilBF.cycles)
+		//{
+			//var icon:Image = Image.fromFile(Paths.modsImages('blank'));
+			//Lib.application.window.setIcon(icon);
 
-			Lib.application.window.title = 'WELCOME BACK';
-		}
+			//Lib.application.window.title = 'WELCOME BACK';
+		//}
 
 		#if android FlxG.android.preventDefaultKeys = [BACK]; #end
 

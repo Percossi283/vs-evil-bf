@@ -132,6 +132,10 @@ class MainMenuState extends MusicBeatState
 		add(fnfVer);
 		changeItem();
 
+		#if mobile
+		addVirtualPad(UP_DOWN, A_B);
+		#end
+
 		super.create();
 
 		FlxG.camera.follow(camFollow, null, 9);
@@ -148,7 +152,7 @@ class MainMenuState extends MusicBeatState
 				FreeplayState.vocals.volume += 0.5 * elapsed;
 		}
 
-		if (controls.BACK)
+		if (controls.BACK #if mobile || _virtualpad.buttonB.justPressed #end)
 		{	
 			if (isEvil)
 			{
@@ -168,13 +172,13 @@ class MainMenuState extends MusicBeatState
 
 		if (!selectedSomethin)
 		{
-			if (controls.UI_UP_P)
+			if (controls.UI_UP_P #if mobile || _virtualpad.buttonUp.justPressed #end)
 				changeItem(-1);
 
-			if (controls.UI_DOWN_P)
+			if (controls.UI_DOWN_P #if mobile || _virtualpad.buttonDown.justPressed #end)
 				changeItem(1);
 
-			if (controls.ACCEPT)
+			if (controls.ACCEPT #if mobile || _virtualpad.buttonA.justPressed #end)
 			{
 				if (!usableOptions.contains(optionShit[curSelected]))
 					return;

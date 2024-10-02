@@ -88,10 +88,9 @@ class TitleState extends MusicBeatState
 		FlxG.keys.preventDefaultKeys = [TAB];
 
 		// preload!!
-		//screw this preload it's making my port crash (I think)
-		//PlayState.SONG = Song.loadFromJson('cycles', 'cycles');
-		//Paths.inst('cycles');
-		//Paths.voices('cycles');
+		PlayState.SONG = Song.loadFromJson('cycles', 'cycles');
+		Paths.inst('cycles');
+		Paths.voices('cycles');
 
 		curWacky = FlxG.random.getObject(getIntroTextShit());
 

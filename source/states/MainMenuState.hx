@@ -273,8 +273,6 @@ class MainMenuState extends MusicBeatState
 						FlxTween.tween(myLittleFinger.scale, {x: 0.3, y: 0.3}, 1.6, {ease: FlxEase.expoIn, onComplete: (twn:FlxTween)->
 						{
 							PlayState.SONG = Song.loadFromJson('cycles', 'cycles');
-							Paths.inst('cycles');
-							Paths.voices('cycles');
 							PlayState.isStoryMode = false;
 							PlayState.storyDifficulty = 1;
 

@@ -22,7 +22,7 @@ class Cycles extends BaseStage
 
 	override function create()
 	{
-		Lib.application.window.title = 'WELCOME BACK';
+		//Lib.application.window.title = 'WELCOME BACK';
 
 		sky = new FlxSprite().loadGraphic(Paths.image('cycles/wlecomebackground'));
 		sky.scrollFactor.set(0.9, 0.9);

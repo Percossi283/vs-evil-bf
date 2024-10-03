@@ -41,6 +41,9 @@ class TrueMenuState extends MusicBeatState
         DiscordClient.changePresence('Welcome Back.', null);
         #end
 
+	FlxG.mouse.visible = true;
+	FlxG.mouse.useSystemCursor = true;
+
         super.create();
 
         TitleState.isEvil = true;

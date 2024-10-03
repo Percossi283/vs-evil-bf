@@ -74,6 +74,11 @@ class TrueMenuState extends MusicBeatState
         }
 
         canInteract = false;
+
+	#if mobile
+	addVirtualPad(UP_DOWN, A_B);
+	#end
+	
         FlxTimer.wait(1.15, ()->
         {
             canInteract = true;
@@ -81,9 +86,6 @@ class TrueMenuState extends MusicBeatState
         });
 
         FlxG.sound.playMusic(Paths.music('cryingTheme'));
-	#if mobile
-	addVirtualPad(UP_DOWN, A_B);
-	#end
     }
 
     var canInteract:Bool = true;

@@ -82,8 +82,8 @@ class TrueMenuState extends MusicBeatState
         });
 
 	#if mobile
-	pad = addVirtualPad(UP_DOWN, A_B);
-	pad.bringToFront();
+	addVirtualPad(UP_DOWN, A_B);
+	addVPadCam();
 	#end
 
         FlxG.sound.playMusic(Paths.music('cryingTheme'));

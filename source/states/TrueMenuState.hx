@@ -83,7 +83,6 @@ class TrueMenuState extends MusicBeatState
 
 	#if mobile
 	addVirtualPad(UP_DOWN, A_B);
-        _virtualpad.set_cameras([FlxG.camera]);
 	#end
 
         FlxG.sound.playMusic(Paths.music('cryingTheme'));
@@ -92,12 +91,12 @@ class TrueMenuState extends MusicBeatState
     var canInteract:Bool = true;
     override function update(dt:Float)
     {
-        if (controls.BACK #if mobile || _virtualpad.buttonB.justPressed #end && canInteract) MusicBeatState.switchState(new TitleState());
+        if (controls.BACK #if mobile || _virtualpad.buttonB.justPressed #end) MusicBeatState.switchState(new TitleState());
 
-        if (controls.UI_UP_P #if mobile || _virtualpad.buttonUp.justPressed #end && canInteract) changeSelect(-1);
-        if (controls.UI_DOWN_P#if mobile || _virtualpad.buttonDown.justPressed #end && canInteract) changeSelect(1);
+        if (controls.UI_UP_P #if mobile || _virtualpad.buttonUp.justPressed #end) changeSelect(-1);
+        if (controls.UI_DOWN_P#if mobile || _virtualpad.buttonDown.justPressed #end) changeSelect(1);
 
-        if (controls.ACCEPT #if mobile || _virtualpad.buttonA.justPressed #end && canInteract) chooseOption();
+        if (controls.ACCEPT #if mobile || _virtualpad.buttonA.justPressed #end) chooseOption();
 
         for (item in items)
         {

@@ -44,14 +44,25 @@ class VisualsUISubState extends BaseOptionsMenu
 			'bool');
 		addOption(option);
 
-		#if !mobile
 		var option:Option = new Option('FPS Counter',
 			'If unchecked, hides FPS Counter.',
 			'showFPS',
 			'bool');
 		addOption(option);
 		option.onChange = onChangeFPSCounter;
-		#end
+
+		var option:Option = new Option('Allow Phone Screensaver',
+		    'If checked, the phone will sleep after going inactive for few seconds.',
+		    'screensaver', 
+		    'bool');
+		option.onChange = () -> lime.system.System.allowScreenTimeout = curOption.getValue(); 
+		addOption(option);
+
+		var option:Option = new Option('Hide Hitbox Hints',
+		    'If checked, makes the hitbox invisible.(Why would you do this)',
+		    'hideHitboxHints',
+		    'bool');
+		addOption(option);
 		
 		#if CHECK_FOR_UPDATES
 		var option:Option = new Option('Check for Updates',
@@ -79,11 +90,9 @@ class VisualsUISubState extends BaseOptionsMenu
 		add(notes);
 	}
 
-	#if !mobile
 	function onChangeFPSCounter()
 	{
 		if(Main.fpsVar != null)
 			Main.fpsVar.visible = ClientPrefs.data.showFPS;
 	}
-	#end
 }

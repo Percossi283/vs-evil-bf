@@ -48,7 +48,7 @@ class TrueMenuState extends MusicBeatState
         bg = new FlxSprite().loadGraphic(Paths.image('TRUE menu'));
         bg.alpha = 0;
         FlxTween.tween(bg, {alpha: 1}, 0.8, {ease: FlxEase.expoOut, startDelay: 1});
-        //add(bg);
+        add(bg);
 
         var START_Y:Float = 90;
 

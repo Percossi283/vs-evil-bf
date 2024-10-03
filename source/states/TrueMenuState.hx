@@ -41,6 +41,10 @@ class TrueMenuState extends MusicBeatState
         DiscordClient.changePresence('Welcome Back.', null);
         #end
 
+	#if mobile
+	addVirtualPad(UP_DOWN, A_B);
+	#end
+
         super.create();
 
         TitleState.isEvil = true;
@@ -86,12 +90,12 @@ class TrueMenuState extends MusicBeatState
     var canInteract:Bool = true;
     override function update(dt:Float)
     {
-        if (controls.BACK && canInteract) MusicBeatState.switchState(new TitleState());
+        if (controls.BACK #if mobile || _virtualpad.buttonB.justPressed #end && canInteract) MusicBeatState.switchState(new TitleState());
 
-        if (controls.UI_UP_P && canInteract) changeSelect(-1);
-        if (controls.UI_DOWN_P && canInteract) changeSelect(1);
+        if (controls.UI_UP_P #if mobile || _virtualpad.buttonUp.justPressed #end && canInteract) changeSelect(-1);
+        if (controls.UI_DOWN_P#if mobile || _virtualpad.buttonDown.justPressed #end && canInteract) changeSelect(1);
 
-        if (controls.ACCEPT && canInteract) chooseOption();
+        if (controls.ACCEPT #if mobile || _virtualpad.buttonA.justPressed #end && canInteract) chooseOption();
 
         for (item in items)
         {

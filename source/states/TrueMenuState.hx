@@ -110,11 +110,16 @@ class TrueMenuState extends MusicBeatState
     // Draw debug rectangles for each text option
     for (option in items) {
         var text:FlxText = option.text;
-        FlxG.debug.drawRect(text.getScreenBounds(), FlxColor.RED); // Draw a red rectangle around the text
+        // Set a color and draw a rectangle around the text
+        var bounds = text.getScreenBounds();
+        graphics.lineStyle(1, 0xFF0000); // Red color
+        graphics.drawRect(bounds.x, bounds.y, bounds.width, bounds.height); // Draw rectangle
     }
 
     // Draw debug rectangle for the virtual pad
-    FlxG.debug.drawRect(_virtualpad.getScreenBounds(), FlxColor.GREEN); // Draw a green rectangle around the virtual pad
+    var padBounds = _virtualpad.getScreenBounds();
+    graphics.lineStyle(1, 0x00FF00); // Green color
+    graphics.drawRect(padBounds.x, padBounds.y, padBounds.width, padBounds.height); // Draw rectangle
 	}
 
     function chooseOption()

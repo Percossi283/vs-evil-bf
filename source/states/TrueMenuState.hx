@@ -41,10 +41,6 @@ class TrueMenuState extends MusicBeatState
         DiscordClient.changePresence('Welcome Back.', null);
         #end
 
-	#if mobile
-	addVirtualPad(UP_DOWN, A_B);
-	#end
-
         super.create();
 
         TitleState.isEvil = true;
@@ -83,6 +79,10 @@ class TrueMenuState extends MusicBeatState
             canInteract = true;
             changeSelect(0, false);
         });
+
+	#if mobile
+	addVirtualPad(UP_DOWN, A_B);
+	#end
 
         FlxG.sound.playMusic(Paths.music('cryingTheme'));
     }

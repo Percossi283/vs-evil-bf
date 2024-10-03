@@ -112,6 +112,10 @@ class CreditsState extends MusicBeatState
 
 		FlxG.mouse.visible = true;
 		FlxG.mouse.useSystemCursor = true;
+
+		#if mobile
+		addVirtualPad(NONE,B);
+		#end
 	
 		super.create();
 
@@ -206,7 +210,7 @@ class CreditsState extends MusicBeatState
 	var canInteract:Bool = true;
 	override function update(elapsed:Float)
 	{
-		if (controls.BACK && canInteract) 
+		if (controls.BACK #if mobile || _virtualpad.buttonB.justPressed #end && canInteract) 
 		{
 			switch(curState)
 			{

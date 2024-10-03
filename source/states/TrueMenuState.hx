@@ -104,6 +104,19 @@ class TrueMenuState extends MusicBeatState
         }
     }
 
+    override public function draw():Void {
+    super.draw();
+
+    // Draw debug rectangles for each text option
+    for (option in items) {
+        var text:FlxText = option.text;
+        FlxG.debug.drawRect(text.getScreenBounds(), FlxColor.RED); // Draw a red rectangle around the text
+    }
+
+    // Draw debug rectangle for the virtual pad
+    FlxG.debug.drawRect(_virtualpad.getScreenBounds(), FlxColor.GREEN); // Draw a green rectangle around the virtual pad
+	}
+
     function chooseOption()
     {
         canInteract = false;

@@ -63,7 +63,7 @@ class TrueMenuState extends MusicBeatState
             text.y =  START_Y + (text.height * i + 40);
             text.y += 62 * (i - 1);
             items.push(cast {text: text, desiredScale: 1});
-            add(text);
+            //add(text);
 
             text.alpha = 0;
             text.scale.set(1.4, 0.8);

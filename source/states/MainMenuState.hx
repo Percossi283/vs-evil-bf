@@ -255,6 +255,7 @@ class MainMenuState extends MusicBeatState
 		FlxTimer.wait(2, ()->
 		{
 			Main.fpsVar.visible = false;
+			_virtualpad.visible = false;
 		});
 
 		FlxTween.tween(FlxG.sound.music, {pitch: 0}, 9, {ease: FlxEase.expoIn});

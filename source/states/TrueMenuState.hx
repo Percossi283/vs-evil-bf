@@ -80,11 +80,11 @@ class TrueMenuState extends MusicBeatState
             changeSelect(0, false);
         });
 
+        FlxG.sound.playMusic(Paths.music('cryingTheme'));
+
 	#if mobile
 	addVirtualPad(UP_DOWN, A_B);
 	#end
-
-        FlxG.sound.playMusic(Paths.music('cryingTheme'));
     }
 
     var canInteract:Bool = true;
@@ -102,6 +102,7 @@ class TrueMenuState extends MusicBeatState
             var scaleLerp:Float = FlxMath.lerp(item.desiredScale, item.text.scale.x, Math.exp(-dt * 9.5));
 			item.text.scale.set(scaleLerp, scaleLerp);
         }
+	super.update(elapsed);
     }
 
     function chooseOption()

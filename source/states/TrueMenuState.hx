@@ -102,7 +102,7 @@ class TrueMenuState extends MusicBeatState
             var scaleLerp:Float = FlxMath.lerp(item.desiredScale, item.text.scale.x, Math.exp(-dt * 9.5));
 			item.text.scale.set(scaleLerp, scaleLerp);
         }
-	super.update(elapsed);
+	super.update(dt);
     }
 
     function chooseOption()

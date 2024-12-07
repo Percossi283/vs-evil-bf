@@ -1,12 +1,15 @@
 ![](https://raw.githubusercontent.com/A2source/A2archive/main/bump0014.png)
 
-# Vs EVIL BF!!!!!
+# Vs EVIL BF ANDROID PORT!!!!!
 
 Daddy Dearest, with a new experiment created an EVIL clone of Boyfriend, using his DNA and Boyfriend's, he created an uncontrollable monstrosity.
 
 WITH THE POWER OF RAPPING, DEFEAT HIM AND SAVE YOUR HOT GIRLFRIEND!!
 
 # CREDITS
+Heropowerbrine Porter of evil Bf
+
+Eros Im ME!!!! i dont know 
 
 [H0nkish](https://twitter.com/H0nkish) - Cycles Remix
 
